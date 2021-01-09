@@ -62,6 +62,7 @@ body {
   border-radius: 30px;
   border: 1px 1px grey;
   color: coral;
+  outline: none;
   background-color: white;
 }
 

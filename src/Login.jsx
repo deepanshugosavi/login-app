@@ -4,14 +4,20 @@ import { SiMinutemailer } from "react-icons/si";
 import { Redirect } from "react-router-dom";
 
 function Login(props) {
-  const [loginData, setLoginData] = useState({ email: "", password: "" });
+  const [loginData, setLoginData] = useState(
+    localStorage.getItem("loggedIn")
+      ? { loggedIn: true }
+      : { email: "", password: "" }
+  );
   const handleOnClick = () => {
     console.log(loginData);
     if (
       loginData.email === "deepanshugosawi" &&
       loginData.password === "Pass@123"
-    )
+    ) {
       setLoginData({ loggedIn: true });
+      localStorage.setItem("loggedIn", "true");
+    }
   };
   const handleOnChange = (event) => {
     setLoginData({ ...loginData, [event.target.id]: event.target.value });
