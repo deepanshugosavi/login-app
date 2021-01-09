@@ -17,7 +17,7 @@ function Login(props) {
     setLoginData({ ...loginData, [event.target.id]: event.target.value });
   };
 
-  if (loginData.loggedIn) return <Redirect to="/main" />;
+  if (loginData.loggedIn) return <Redirect to="/login-app/main/" />;
   return (
     <div className="main__container">
       <h3>LOGIN </h3>
